@@ -1,0 +1,274 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\textheight  = 21cm
+\textwidth   = 15cm
+\topmargin = -0.5 cm
+\oddsidemargin= 1cm
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenx}
+\usepackage[spanish]{babel}
+\usepackage[pdftex]{graphicx} 	%  uso de gráficos en general
+\usepackage{subfigure} 		%  poder poner dos gráficos como parte de uno
+\usepackage{fancyhdr} 		%  encabezado diferente para pag pares e impares
+\usepackage{epstopdf} 		%  Convertir .eps a .pdf (si fuera necesario)
+\usepackage{titling}
+\usepackage{fancyvrb,fancybox,calc} 
+\usepackage[svgnames]{xcolor} 
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % busca en este orden! 
+
+\parindent=0mm
+
+\definecolor{light-gray}{gray}{0.94}
+\definecolor{textgray}{gray}{0.5}
+\newenvironment{verbcode}{\VerbatimEnvironment
+  \begin{Sbox} \color{textgray}\scriptsize
+  \begin{minipage}{\linewidth+2\fboxsep-2\fboxrule-12pt}    
+  \begin{Verbatim}
+}{\end{Verbatim}  
+  \end{minipage}   
+  \end{Sbox} \color{black}\normalsize
+  \fcolorbox{black}{light-gray}{\TheSbox} 
+} 
+
+
+\begin{document}
+\begin{center}
+
+% Logo ITBA
+\begin{figure}[H]
+    \centering
+    % Asegúrate de que la carpeta 'pics' y el archivo existan
+    \includegraphics[width=5cm]{LogoITBA.png} 
+\end{figure}
+
+% Title
+\HRule \\[0.2cm]
+{ \huge \bfseries CONSIGNA FINAL: \\ \textit{Procesamiento de \\ Señales e Imágenes Biomédicas} \\[0.2cm] }
+\HRule \\[1cm]
+
+\vspace{0.5cm}
+
+% Author and supervisor corrigiendo los errores de salto de línea
+{\centering
+\large 
+
+\emph{Profesores:}\\[0.2cm]
+Roberto Sebastián \textsc{Tomás} \\[0.1cm]
+Lucila \textsc{Capurro} \\[0.1cm]
+Francisco \textsc{Tassara} \\[0.1cm]
+Victoria \textsc{Reppucci} \\[1cm]
+
+\emph{Materia:}\ \ \  16.63 Procesamiento de Señales e Imágenes Biomédicas \\[0.5cm]
+
+\emph{Período:}\ \ \  Segundo Cuatrimestre 2025
+
+}
+
+\end{center}
+
+\vspace{1cm}
+
+\pagestyle{fancy}
+\headheight=60pt 	%para cambiar el tamaño del encabezado
+\fancyhead[L]	{ 16.63 Procesamiento de Señales e Imágenes Biomédicas}					
+\fancyhead[R] 	{CONSIGNA EXAMEN FINAL}
+
+\newpage
+
+El Examen Final de la materia se compone de dos instancias evaluativas diseñadas para demostrar el dominio de las áreas principales del curso: procesamiento de señales y procesamiento de imágenes biomédicas.
+\vspace{0.25cm}
+
+Los/as alumnos/as, el día de inscripción al examen final, deberán optar por una de las siguientes combinaciones de instancias de exámenes:
+
+\begin{enumerate}
+    \item Examen \textbf{teórico individual} sobre procesamiento de \textit{señales} y, en caso de aprobarlo, defender un trabajo \textbf{práctico grupal} sobre procesamiento de \textit{imágenes}.
+
+    \item Examen \textbf{teórico individual} sobre procesamiento de \textit{imágenes} y, en caso de aprobarlo, defender un trabajo \textbf{práctico grupal} sobre procesamiento de \textit{señales}.
+\end{enumerate}
+
+Es condición necesaria y obligatoria aprobar ambas etapas para superar esta etapa final del curso.
+\vspace{0.25cm}
+
+La nota final otorgada a cada alumno/a se compondrá en partes iguales por el puntaje obtenido en cada instancia, es decir:
+\begin{equation*}
+    NOTA = 0.5 \times NOTA\_TEORICO + 0.5 \times NOTA\_PRACTICO
+\end{equation*}
+\vspace{0.25cm}
+
+Se recomienda leer todo este documento en detalle para comprender la consigna en su totalidad.
+\vspace{0.25cm}
+
+De tener alguna duda puntual con respecto a lo mencionado en el presente documento, se deberá enviar un mail a los profesores de la materia para aclarar la duda.
+
+\newpage
+\section*{EXAMEN TEÓRICO}
+
+El examen teórico individual se tomará de manera escrita, sin excepción y se contará con 45 minutos para desarrollar el examen.
+
+\subsection*{DISEÑO DEL EXAMEN}
+Se evaluarán todos los temas del área elegida de procesamiento (señales o imágenes biomédicas). 
+\vspace{0.25cm}
+
+Las consignas serán preguntas tipo \textit{multiple choice}, \textit{Verdadero y Falso} y/o \textit{a desarrollar}.
+Se podrán incluir consignas que tengan una penalización por responderse incorrectamente como así también considerar parcialmente el puntaje de algún inciso por una respuesta incompleta o no totalmente incorrecta. 
+\vspace{0.35cm}
+
+De elegir la \textit{primera} combinación de exámenes (examen téorico sobre \textbf{señales}), los temas a evaluar serán:
+\begin{itemize}
+    \item Procesos Estocásticos y Estimadores
+    \item Filtros Óptimos y Modelo AR
+    \item ECG y HRV
+    \item EEG
+    \item Potenciales Evocados
+    \item Técnicas avanzadas de procesamiento de señales.
+\end{itemize}
+\vspace{0.35cm}
+
+De elegir la \textit{segunda} combinación de exámenes (examen téorico sobre \textbf{imágenes}), los temas a evaluar serán:
+\begin{itemize}
+    \item Obtención de Imágenes
+    \item Mejoramiento y Filtrado de Imágenes
+    \item Reconstrucción Tomográfica
+    \item Segmentación de Imágenes
+    \item Análisis de Texturas
+    \item Compresión y Transmisión de Imágenes
+    \item Técnicas avanzadas de procesamiento de imágenes.
+\end{itemize}
+\vspace{0.25cm}
+
+\subsection*{EVALUACIÓN y APROBACIÓN}
+
+El examen incluirá distintos incisos con un puntaje asignado. Cada inciso será sobre un tema teórico de la materia respecto al área elegida (señales o imágenes). Las consignas serán principalmente sobre temas teóricos pero podrán estar involucradas en un ejemplo práctico adecuado.
+\vspace{0.25cm}
+
+Para aprobar esta instancia, el alumno deberá obtener un porcentaje de respuestas correctas mayor o igual al 60\% (sesenta por ciento).
+\vspace{0.25cm}
+
+La aprobación o no de esta instancia se otorgará a cada alumno/a de manera particular apenas finalice el examen. De haberse aprobado esta instancia, se podrá continuar con la siguiente instancia de la defensa grupal del trabajo práctico. De no haberse aprobado, deberá volver a rendir esta parte del trabajo en otra fecha de finales, pero se le dará la posibilidad de rendir la instancia práctica siguiente junto a su grupo de trabajo, cuya nota se guardará para cuando se apruebe esta instancia.
+
+\newpage
+\section*{EXAMEN PRÁCTICO}
+
+El examen práctico se tomará de manera grupal en grupos de 2 a 3 personas mediante la extensión del trabajo desarrollado durante el cuatrimestre. Se contará con un máximo de 20 minutos para defender el trabajo. Días previos al examen se dará a los alumnos la hora exacta que deberán presentarse para defenderlo según la fecha en la que se anotaron.
+\vspace{0.25cm}
+
+\subsection*{DESCRIPCIÓN}
+
+El objetivo principal es la elaboración de un algoritmo que trate de resolver alguna problemática actual de interés para los/as estudiantes en el área del procesamiento de señales o imágenes biomédicas que introduzca conceptos de procesamiento avanzado de señales/imágenes biomédicas. 
+\vspace{0.25cm}
+
+El tema en el que se basará este trabajo puede ser de libre elección para el grupo de estudiantes, siendo una de las posibles opciones la continuación del trabajo práctico desarrollado durante la cursada. De elegir otro tema, deben buscar información relevante para comprender al problema elegido y así realizar un completo análisis del mismo. La temática elegida debe estar relacionada al procesamiento de señales o imágenes biomédicas que sea de importancia en la actualidad para diagnóstico o investigación. Las/os estudiantes tendrán la posibilidad de elegir el tema en torno al eje que crean conveniente, siempre y cuando respeten la dinámica de elaboración y la fecha de defensa del final. De no encontrar algún tema de interés, la cátedra brindará ejemplos de posibles temas que puedan servir de inspiración para los/as estudiantes. 
+\vspace{0.25cm}
+
+El algoritmo a desarrollar debe contar con todos los temas vistos en la materia relativos a la temática elegida y se deberá agregar alguna/as técnica/as nueva/as o en auge que complementen al trabajo. Por otro lado, también es obligatorio que dicho trabajo cuente con técnicas de clasificación/regresión de Aprendizaje Automático (AA) o Reden Neuronales (RN) para resolver la problemática planteada. Para el diseño del mismo, debe integrarse el conocimiento generado en una previa investigación y comprensión del problema.
+\vspace{0.25cm}
+
+De elegir una temática nueva, la base de datos con las que deberán trabajar deben provenir de base de datos verificadas, oficiales, de fuentes confiables como centros de investigación/salud o señales que previamente fueron utilizadas en otras investigaciones. Es responsabilidad del grupo de trabajo, encontrar una base de datos con señales o imágenes adecuadas para trabajar. De no encontrar una base de datos adecuada, se deberá informar al plantel docente con un plazo mínimo de 10 días previos a la defensa del final, quienes podrán brindar ayuda o recomendar cambiar el tema a desarrollar. 
+\vspace{0.25cm}
+
+La elección del tema debe estar \textit{verificada} como mínimo 7 días antes de la fecha en la que se registrará el grupo de trabajo para rendir el exámen final. Por “\textit{verificada}” referimos a que debe ser un tema que todos/as los/as alumnos/as pacten desarrollar como así también la cátedra debe haber aprobado el desarrollo de ese trabajo. Es decir, se debe enviar un mail como mínimo 7 días antes de la defensa del final, comentando a los profesores el tema que eligieron, un breve resumen del mismo, cómo planifican resolverlo y con qué base de datos de señales cuentan para trabajar. En el mail deben estar en copia todos los integrantes del equipo de trabajo como todos los profesores de la materia. Los profesores responderán aprobando el tema o recomendando elegir otro.
+
+\subsection*{DISEÑO DEL INFORME}
+
+El informe deberá cumplir con las siguientes especificaciones de formato:
+
+\begin{itemize}
+\item Extensión máxima: 10 (diez) páginas, incluyendo figuras y tablas. Sin incluir carátula, índice y referencias. Se puede incluir un anexo de máximo de 3 (tres) páginas.
+\item Tipo de letra recomendada: Arial o Times New Roman.
+\item Tamaño de fuente: 11 puntos.
+\item Interlineado: 1,15.
+\item Márgenes recomendados: 2,5 cm en todos los bordes.
+\end{itemize}
+
+Se deberá abordar obligatoriamente los siguientes temas:
+
+\begin{itemize}
+
+    \item \textbf{ESTADO DEL ARTE:} Investigación sobre el eje elegido, el estado actual del mismo, la importancia de su tratamiento y contextualizar al tema elegido.
+    
+    \item \textbf{PROBLEMÁTICA:} Planteo del problema y desarrollo de una propuesta de trabajo que pueda solucionarlo. Se debe aclarar y explicar la base de datos utilizada (brindar el link de acceso de ser necesario).
+    
+    \item \textbf{OBJETIVOS y DISEÑO:} Descripción de un algoritmo (ideal) que permita resolver tal problemática. Comparación con planteos similares por otros autores o algoritmos que ya existan. Objetivos de mínima del algoritmo y objetivos de máxima del algoritmo.
+    
+    \item \textbf{DESARROLLO:} Elaboración de un código en el que se incorpore obligatoriamente lo siguiente:
+    
+        \begin{enumerate}
+            \item Técnicas de acondicionamiento de señales biomédicas / Técnicas de mejoramiento de imágenes biomédicas
+    
+            \item Algoritmos de procesamiento de señales/imágenes biomédicas vistas en la materia para extraer información relevante de la señal/imágen. Se pueden implementar técnicas vistas en clase pero no con el fin habitual visto en clase.
+    
+            \item Técnica novedosa de procesamiento. Por ejemplo Transformada Wavelets, Independent Component Analysis, Principal Component Analysis, etc (ya sea como acondicionamiento como para extraer características para la creación del modelo de AA o RN)
+    
+            \item Creación de 2 modelos de clasificación/regresión distintos que utilicen distintos tipos de técnicas de AA o RN para resolver la problemática planteada.
+        \end{enumerate}
+    
+    \item \textbf{RESULTADOS:} Ejecución del algoritmo y medición del rendimiento de los modelos. Análisis de los resultados obtenidos.
+    
+    \item \textbf{CONCLUSIÓN:} Recapitulación de lo desarrollado, comparación de los resultados obtenidos con los objetivos planteados. Propuesta de desarrollos a futuro para mejorar el algoritmo.
+    
+\end{itemize}
+
+\vspace{0.25cm}
+
+\subsection*{ENTREGA y DEFENSA}
+
+\begin{itemize}
+    \item La entrega final debe ser vía mail hacia todos los profesores de la materia. Se debe aclarar en el mismo: integrantes del grupo, tema elegido, fecha de defensa en la que se inscribieron al final y cualquier otra característica que se pidió previamente por los/as profesores.
+    
+    \item Se considerará una entrega en término si se recibe el mail de entrega hasta 1 día antes del horario y fecha de inscripción del final que aparece en SGA. De no cumplir con este plazo de entrega, se descontará la cantidad de puntos correspondientes a la demora, partiendo la nota máxima desde un 8 (ocho). Si no se llegase a entregar el trabajo antes del horario de defensa del final que aparece en SGA, esta instancia final se considerará reprobada.
+    
+    \item Se deberá entregar todo documento que se crea necesario para defender el desarrollo de cada trabajo y que se pueda evaluar correctamente, pero es obligatoria la entrega de un informe principal que explicite todo lo desarrollado siguiendo el diseño pedido previamente.
+
+    \begin{itemize}
+        \item[-] Los algoritmos de Python pueden ser entregados en formato (\textit{.py}) y/o (\textit{.ipynb}). También se debe incluir un informe principal (\textit{.pdf}) que resuma el procesamiento que hacen los códigos desarrollados, los análisis realizados y las conclusiones a las que se llegó. En el informe principal se deberá detallar qué información tiene cada documento de Python.
+
+        \item[-] Si se necesitase entregar otros archivos que se crean complementarios para la evaluación del trabajo, se pueden entregar siempre y cuando se aclaren en el cuerpo del mail la descripción de cada archivo adjunto.
+        
+    \end{itemize}
+
+    \item El título del informe a entregar debe ser:\\  \texttt{PSIBAñoQn-FINAL-Apellido1\_Apellido2\_Apellido3.pdf} \\ 
+    \textcolor{gray}{Ejemplo: \texttt{PSIB2024Q2-FINAL-Reppucci\_Tassara\_Capurro.pdf}}
+
+    \item El día de defensa se deberá exponer oralmente un resumen del trabajo para resolver las consignas planteadas.
+
+    \item La defensa se deberá realizar acompañado de una presentación tipo \textit{Power Point} que se debe incluir en la entrega.
+
+    \item La duración de la defensa deberá ser de 20 minutos por grupo (tiempo máximo obligatorio). Luego de ese lapso de tiempo, se contarán con 5 minutos finales para que los evaluadores realicen las preguntas y aclaraciones que se crean necesarias para cerrar la defensa.
+    
+
+\end{itemize}
+
+\vspace{0.25cm}
+
+\subsection*{EVALUACIÓN y APROBACIÓN}
+
+\begin{itemize} 
+    \item \textit{Del informe del trabajo se evaluará:} La prolijidad del mismo, del código realizado, el respeto de las consignas planteadas y también la solidez del análisis realizado en cada paso.
+    
+    \item \textit{De la defensa oral se evaluará:} La claridad, el conocimiento mostrado y la utilización de tecnicismos propios de la materia, como así también la participación de cada miembro del grupo y el respeto del tiempo asignado para la defensa oral.
+
+    \item Se dará una breve devolución oral el día de la defensa indicando la aprobación o no de esta instancia. Se dará otra devolución más detallada vía mail junto con la nota final del trabajo, en un plazo de 5 (cinco) días luego de la defensa del mismo.
+
+    \item Si se llegase a  necesitar que la nota se suba instantáneamente para poder rendir algún otro final del cual esta materia es correlativa, se deberá indicar previamente a los profesores.
+\end{itemize}
+
+Para aprobar esta instancia, se deberá haber realizado un trabajo que demuestre haber comprendido en su totalidad la temática elegida. Serán condicionantes de aprobación, errores teóricos y conceptuales importantes sobre la temática elegida como así también un desarrollo superficial del trabajo.
+
+\vspace{0.25cm}
+
+
+
+\end{document}
+

@@ -1,0 +1,242 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\textheight  = 21cm
+\textwidth   = 15cm
+\topmargin = -0.5 cm
+\oddsidemargin= 1cm
+
+\usepackage{float}
+\usepackage{amsmath}
+% \usepackage[utf8]{inputenx} % Comentado para evitar conflictos con inputec
+\usepackage[spanish]{babel}
+\usepackage[pdftex]{graphicx}   
+\usepackage{subfigure}      
+\usepackage{fancyhdr}       
+\usepackage{epstopdf}       
+\usepackage{titling}
+\usepackage{fancyvrb,fancybox,calc} 
+\usepackage[svgnames]{xcolor} 
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{hyperref} 
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} 
+
+\parindent=0mm
+
+\begin{document}
+
+\begin{center}
+
+% Logo ITBA
+\begin{figure}[H]
+    \centering
+    % Si la imagen no existe, LaTeX pondrá un cuadro vacío (draft mode)
+    \includegraphics[width=5cm]{LogoITBA.png}
+\end{figure}
+
+% Title
+\HRule \\[0.2cm]
+{ \huge \bfseries REGLAMENTO \\[0.2cm] 
+\large Procesamiento de Señales e Imágenes Biomédicas \\[0.2cm] }
+\HRule \\[1cm]
+
+\vspace{0.5cm}
+
+% Author and supervisor
+{\centering \large 
+
+\emph{Profesores:}\\[0.3cm]
+Roberto Sebastián \textsc{Tomás} \\[0.2cm]
+Francisco \textsc{Tassara} \\[0.2cm]
+Lucila \textsc{Capurro} \\[0.2cm]
+Victoria \textsc{Reppucci} \\[1cm]
+
+\emph{Código de la materia:}\ \ \  16.63 \\[0.3cm]
+\emph{Departamento:}\ \ \  Bioingeniería \\[0.3cm]
+\emph{Cantidad de créditos:}\ \ \  6 \\[0.3cm]
+\emph{Carga horaria total:}\ \ \ 102 horas \par}
+
+\end{center}
+
+\vspace{1cm}
+
+\pagestyle{fancy}
+\headheight=60pt    
+\fancyhead[L]{ REGLAMENTO }                  
+\fancyhead[R]{ 16.63 - Procesamiento de Señales e Imágenes Biomédicas }
+
+\newpage
+% ... Resto del documento ...
+
+\newpage
+
+\section{Organización de la asignatura}
+
+El curso consta de 4 tipos de clases:
+
+\begin{enumerate}
+    \item \textbf{Teórico-Prácticas} (T-P) En estas clases el docente a cargo explicará las bases teóricas y prácticas de los diferentes temas haciendo especial hincapié en su aplicación, y resolución en lenguaje de programación \textit{Python} de forma tal que luego puedan ser utilizados y debatidos en las clases de consulta y para la resolución y elaboración de los Trabajos Prácticos (Ver apartado ``\nameref{sec:evaluacion}"). El estudiante podrá consultar las dudas que surjan sobre los temas dados ya sea durante el desarrollo de la clase o en las clases siguientes. Las explicaciones teóricas se acompañan de preguntas disparadoras vinculadas a resolver problemas prácticos de forma intuitiva. Las/os estudiantes tienen la posibilidad de formular preguntas u opiniones, en torno a los interrogantes, o en cualquier momento durante el transcurso de la clase. Se podrán hacer consultas fuera del horario del curso mediante correo electrónico y/o grupo de \textit{Google Chat} de la asignatura, pero se debe tener en cuenta la posibilidad de que haya cierta demora en la respuesta a estas consultas particulares dado otros compromisos laborales.
+
+    Estas clases \textbf{serán dictadas de forma presencial exclusivamente} y, a menos que se informe el dictado bajo otra modalidad con antelación, se mantendrán de esta manera. \textbf{Las clases no serán grabadas}, con excepción de algún caso particular definido exclusivamente por el equipo docente.
+    
+    \item \textbf{Consulta} (C): Las/os estudiantes contarán con encuentros sincrónicos que permitirán acompañar el desarrollo de los trabajos, profundizar en temas del programa de contenidos y formular consultas sobre los cuestionarios según las necesidades que tenga cada una/o. Estas clases permitirán realizar el seguimiento, dirección y evaluación de los avances de los proyectos. En estas clases también será posible realizar consultas de cualquier índole, es decir, tanto de conceptos teóricos como prácticos y, al igual que en la clases Teórico-Prácticas, las consultas podrán hacerse en horario de clase o fuera del mismo.
+    
+    \item \textbf{Laboratorio} (L): En las clases de laboratorio, los profesores a cargo brindarán un ensayo experimental del tema en cuestión. Se expondrá tanto información sobre el registro y sobre el procesamiento de la señal electrofisiológica correspondiente. Los estudiantes deberán participar de la clase y su desarrollo, como también de la entrega de un informe sobre dicha clase. 
+    
+    \item \textbf{Evaluativas} (E): En las clases de evaluación, se presentarán los Trabajos Prácticos elaborados por las/os estudiantes durante el transcurso de la asignatura. Dichos trabajos deben ser desarrollados a lo largo de la cursada y serán evaluados a partir de su correspondiente presentación oral y entrega de informe escrito 	(Ver apartado ``\nameref{sec:evaluacion}"). 
+    
+\end{enumerate}
+
+La modalidad de cada clase se detalla en el cronograma tentativo de la asignatura y cada una de ellas estará a cargo de algún integrante del equipo docente.
+
+\newpage
+\section{Modalidad de evaluación y regularización de la materia}
+\label{sec:evaluacion}
+
+Los alumnos serán evaluados a través de:
+
+\begin{itemize}
+    
+    \item Trabajos Prácticos (Cantidad: 2)
+    
+    \item Laboratorio e Informe (Cantidad: 2).
+
+    \item Parciales (Cantidad: 4).
+    
+    \item Examen Final (de aprobarse la cursada). 
+    
+\end{itemize}
+
+Se considerará parte de la evaluación tanto la participación de las/os estudiantes en las clases, en las distintas actividades propuestas, como la interacción activa con las/os docentes y sus compañeras/os de curso, además del cumplimiento de las tareas en tiempo y forma.
+
+
+\subsection{Requisitos de Aprobación de la Cursada}
+
+Se considerará como aprobación de la cursada el cumplimiento de los siguientes ítems:
+
+\begin{enumerate}
+    \item \textbf{\textit{Aprobación de los Trabajos Prácticos Grupales, sus respectivos Informes Escritos y Defensas Orales}} (Ver apartado ``\nameref{sec:aprobacion_tps}").
+
+    \item \textbf{\textit{Asistencia a la Prácticas de Laboratorio y Aprobación de Informes}} (en caso de no poder asistir, se debe avisar a los profesores y se evaluará qué se realizará en cada caso particular, de no avisar con antelación o sin tener una justificación coherente de la falta, se reprobará este inciso).
+
+    \item \textbf{\textit{Aprobación de Parciales (Ver apartado ``\nameref{sec:aprobacion_Parciales}").}} 
+    
+\end{enumerate}
+
+\vspace{0.25cm}
+De no cumplirse alguno de los anteriores 3  ítems, se le avisará al estudiante el tema y la modalidad en la que deberá rendir en la fecha de Recuperatorio correspondiente. Se considerará aprobada la cursada  únicamente si se cumple alguno de los siguientes casos:
+\begin{enumerate}
+    \item Se cumplen los 3  ítems anteriores.
+    \item No se cumplen los 3 ítems anteriores, pero se considera aprobado el/la estudiante en la fecha de Recuperatorio.
+\end{enumerate}
+
+De no cumplirse las condiciones de aprobación de la cursada, el/la estudiante quedará en situación de desaprobada/o y deberá recursar la asignatura.
+
+\subsubsection*{Nota de Cursada:}
+
+La nota final de cursada se elaborará en caso de haber cumplido los 3 ítems anteriores, como:
+
+\begin{equation*}
+    (TP_{PIB} \times 0.3) + (TP_{PSB} \times 0.3) + (Ps\times0.3) + (NC\times0.1)
+\end{equation*}
+
+    Siendo:\\
+    $TP_{PIB}:$ La nota asignada al Primer Módulo\\
+    $TP_{PSB}:$ La nota asignada al Segundo Módulo\\
+    $Ps:$ La nota asignada a Parciales\\
+    $NC:$ Nota de concepto\\
+    
+En caso de tener que asistir a la instancia recuperatoria la nota mínima del recuperatorio en este caso será un 4 (cuatro) y la nota máxima será un 7 (siete).
+
+
+\subsection{Nota de concepto}
+
+La nota de concepto depende de la participación en clase de cada alumno y de la nota obtenida en las prácticas de laboratorio. Al final de cada tema, se hará un cuestionario (Kahoot) de los temas vistos en la/s últimas clases, la participación en dichos Kahoots será uno de los componentes de esta nota de concepto. Puntos adicionales serán adjudicados a aquellos alumnos que además de participar en el Kahoot, finalicen en el podio (primeros 3) de la competencia. 
+
+
+\subsection{Requisitos de Aprobación de la Materia}
+
+De aprobarse la cursada el/la estudiante quedará habilitada/o a rendir el examen final. El mismo debe ser aprobado con una nota superior al 4 (cuatro), que equivale al $60\%$ de su examen correctamente realizado, para que se considere que aprobó la totalidad de la asignatura. Ver apartado \ref{sec:ex_final}
+
+\section{Trabajos Prácticos}
+
+Se tomarán 2 Trabajos Prácticos que representan a los dos módulos principales de la materia:
+
+\begin{enumerate}
+    \item \textbf{Primer Módulo:} Procesamiento de Imágenes Biomédicas
+    \item \textbf{Segundo Módulo:} Procesamiento de Señales Biomédicas
+\end{enumerate}
+
+La consigna de cada trabajo se presenta con un mínimo de 21 días de anticipación para que los/as estudiantes puedan resolverlo. El desarrollo y resolución de cada Trabajo Práctico será de manera grupal. Cada grupo de trabajo constará de 2 o 3 estudiantes.
+
+\subsection{Aprobación de Trabajos Prácticos}
+\label{sec:aprobacion_tps}
+Para aprobar un Trabajo Práctico su nota debe ser mayor o igual a 4 (cuatro) que equivale a un $60\%$ del Trabajo correctamente realizado. Dicha calificación será una nota numérica entre el 10 (diez) y el 4 (cuatro). Se hará una devolución detallada de la justificación de la nota numérica asignada a cada grupo.
+
+\section{Parciales}
+
+Se tomarán 4 Parciales sobre cada tema visto en la materia:
+
+\begin{enumerate}
+    \item Estimadores, Filtros y Mejoramiento
+    \item Segmentación (señales e imágenes)
+    \item EEG + PE + ECG + HRV
+    \item Análisis de texturas + Reconstrucción
+    
+\end{enumerate}
+
+Los Parciales se tomarán de manera escrita, sin excepción. Se evaluará el tema teórico dado en la clase a través de preguntas multiple choice, verdadero-falso y/o a desarrollar. Se podrán incluir consignas que tengan una penalización por responder incorrectamente como así también considerar parcialmente el puntaje de algún inciso por una respuesta incompleta o no totalmente incorrecta. 
+
+\subsection{Aprobación de Parciales}
+\label{sec:aprobacion_Parciales}
+
+La aprobación o no del Parcial se otorgará a cada estudiante de manera particular. Para aprobar esta instancia, el alumno deberá obtener un porcentaje de respuestas correctas mayor o igual al 60\% (sesenta por ciento), siendo la calificación final una nota numérica entre 4 (cuatro) y 10 (diez).
+
+La aprobación de todos los parciales es condición necesaria para la aprobación de la materia. De desaprobarse una o más instancias de parcial, las mismas deberán recuperarse en la fecha de recuperatorio. 
+
+\vspace{0.5cm}
+
+\textbf{Sobre el Recuperatorio y la Regularidad:}
+\begin{itemize}
+\item En caso de obtener una nota de \textbf{DESAPROBADO} en uno o más parciales, se deberá asistir a la fecha de Recuperatorio para rendir únicamente las unidades temáticas correspondientes a los parciales desaprobados. En este caso, la nota máxima otorgada a el/los exámenes recuperados será 4 (cuatro).
+
+\item Si no se logra alcanzar la condición de \textbf{APROBADO} en la instancia de Recuperatorio (de cualquiera de los parciales adeudados), se considerará la materia como no aprobada.
+\end{itemize}
+
+ Es importante destacar que quienes no puedan asistir a la fecha asignada en la que se desarrolla la evaluación, deberán \textbf{justificar debidamente la inasistencia} y podrán rendir el Parcial adeudado en la instancia Recuperatoria, en caso contrario se considera al estudiante como \textbf{Ausente} en la evaluación.
+
+\section{Examen Final}\label{sec:ex_final}
+\begin{itemize}
+    \item \textbf{Modalidad:} El examen final cuenta con dos partes:
+
+    \begin{enumerate}
+        \item Trabajo Práctico de temática a elección sobre una de las principales temáticas de la materia: Procesamiento de Señales o Procesamiento de Imágenes; junto con la defensa oral del mismo.
+        \item Examen Teórico de la parte no elegido en el Trabajo Práctico. Es decir, si se elige por ejemplo rendir la parte práctica sobre el módulo de señales, se deberá rendir el examen teórico sobre el módulo de imágenes. 
+    \end{enumerate}
+    
+    
+    
+    \item \textbf{Aprobación y calificación: } La calificación mínima para aprobar es un 4 (cuatro) que corresponde al $60\%$ del Trabajo, de la Defensa y del Examen correctamente realizado (individual). La calificación máxima es un 10 (diez). \textbf{El examen teórico se tomará de forma escrita y presencial sin excepción. Para que la instancia de examen final se considere aprobada, se deben aprobar tanto el módulo práctico como el teórico. En caso contrario, la instancia se considera Desaprobada}. 
+
+    \item \textbf{Requisitos módulo teórico: } Para poder rendir el módulo teórico del final, el estudiante debe encontrarse anotado en la mesa de final. \textbf{No es posible rendir el módulo teórico sin encontrarse anotado en la mesa final correspondiente.}
+
+    \item \textbf{Requisitos módulo práctico: } Por lo menos un integrante del grupo debe encontrarse anotado en la mesa de final correspondiente para que se pueda presentar el módulo práctico del final. En el caso de que algún integrante del grupo no pueda anotarse en la mesa de final o desapruebe el módulo teórico del mismo, se guardará la nota grupal de este módulo del final \textbf{si y solo sí al menos un integrante del grupo se presenta y aprueba el módulo teórico del final en esa misma mesa. Si todos los integrantes del grupo anotados en la mesa desaprueban el módulo teórico se deberá presentar nuevamente el módulo práctico con las correcciones correspondientes.} De cumplirse está condición, el/los estudiante/s que no hayan aprobado o no se hayan presentado a la mesa deberán informar a la cátedra de la situación para que se le adjudique la nota de la parte práctica al presentarse a rendir el módulo teórico del final.
+    
+    \item \textbf{Fechas: } Se puede defender el Examen Final en distintas instancias durante 2 años desde la regularización de la materia.
+    
+    \item \textbf{Consigna: } Mayor información acerca de la consigna del Examen Final será detallado los últimos días de cursada.
+    
+\end{itemize}
+
+\section{Aclaraciones finales}
+
+Es importante remarcar que el no cumplimiento de los plazos, las entregas y consultas (a todos los docentes, sin excepciones), de la forma en las que se aclara en este texto, será penalizado en las calificaciones correspondientes. \textbf{Las comunicaciones que se dirijan sólo a un docente o grupo reducido de docentes no serán consideradas por la cátedra, no tendrán validez como método de comunicación entre docentes y estudiantes.} Este reglamento base de la asignatura contempla todos los puntos a tener en cuenta para el inicio, desarrollo y aprobación de la asignatura, cualquier cambio en dicho reglamento será notificado por la cátedra. Cualquier consulta o inquietud con respecto al presente Reglamento, comunicarse con el docente a cargo de la materia: \textit{Roberto Sebastian Tomás} (\texttt{rtomas@itba.edu.ar})
+
+\end{document}
+

@@ -1,0 +1,27 @@
+## Core latex/pdflatex auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+
+## Intermediate notes generated for bibliography/index
+*.idx
+*.ild
+*.ind
+*.ist
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.snm
+*.vrb
+
+## PDF (OPCIONAL)
+*.pdf

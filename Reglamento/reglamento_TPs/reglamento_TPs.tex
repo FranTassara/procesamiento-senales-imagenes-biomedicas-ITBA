@@ -1,0 +1,391 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\textheight  = 21cm
+\textwidth   = 15cm
+\topmargin = -0.5 cm
+\oddsidemargin= 1cm
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenx}
+\usepackage[spanish]{babel}
+\usepackage[pdftex]{graphicx} 	%  uso de gráficos en general
+\usepackage{subfigure} 		%  poder poner dos gráficos como parte de uno
+\usepackage{fancyhdr} 		%  encabezado diferente para pag pares e impares
+\usepackage{epstopdf} 		%  Convertir .eps a .pdf (si fuera necesario)
+\usepackage{titling}
+\usepackage{fancyvrb,fancybox,calc} 
+\usepackage[svgnames]{xcolor} 
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % busca en este orden! 
+
+\parindent=0mm
+
+\definecolor{light-gray}{gray}{0.94}
+\definecolor{textgray}{gray}{0.5}
+\newenvironment{verbcode}{\VerbatimEnvironment
+  \begin{Sbox} \color{textgray}\scriptsize
+  \begin{minipage}{\linewidth+2\fboxsep-2\fboxrule-12pt}    
+  \begin{Verbatim}
+}{\end{Verbatim}  
+  \end{minipage}   
+  \end{Sbox} \color{black}\normalsize
+  \fcolorbox{black}{light-gray}{\TheSbox} 
+} 
+
+
+\begin{document}
+\begin{center}
+
+% Logo ITBA
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{LogoITBA.png}
+    \label{logoitba}
+\end{figure}
+
+% Title
+\HRule \\[0.2cm]
+{ \huge \bfseries TRABAJO PRÁCTICO \ \ \ \ CUATRIMESTRAL  \\[0.2cm] }
+\HRule \\[1cm]
+
+\vspace{0.5cm}
+% Author and supervisor
+{\centering \large 
+
+\emph{Profesores:}\\[0.3cm]
+Roberto Sebastián \textsc{Tomás} \\[0.2cm]
+Lucila \textsc{Capurro} \\[0.2cm]
+Francisco \textsc{Tassara} \\[0.2cm]
+Victoria \textsc{Reppucci} \\[1cm]
+
+\emph{Materia:}\ \ \  16.63 Procesamiento de Señales e Imágenes Biomédicas \\[1cm]
+
+\emph{Fecha de Entrega de TPI:}\ \ \ 10 de noviembre del 2025 \\[0.5cm]
+\emph{Fecha de Entrega de TPS:}\ \ \ 17 de noviembre del 2025 \par}
+
+\end{center}
+
+\vspace{1cm}
+
+\pagestyle{fancy}
+\headheight=60pt 	%para cambiar el tamaño del encabezado
+\fancyhead[L]	{ 16.63 Procesamiento de Señales e Imágenes Biomédicas}					
+\fancyhead[R] 	{2025 - Q2}
+
+\newpage
+
+\section{Consigna del Trabajo Práctico Cuatrimestral}
+
+El Trabajo Práctico Cuatrimestral consiste en la elaboración de dos proyectos distintos que permitan aplicar los conocimientos adquiridos en el curso sobre procesamiento de imágenes y de señales respectivamente. Los alumnos deberán realizar a un desarrollo grupal de algoritmos adecuados que les permitan resolver alguna problemática, enmarcada en una situación clínica puntual.
+Ambos proyectos se evaluarán individualmente, no deberán abordar necesariamente la misma temática clínica y todos los grupos de estudiantes deberán realizar y aprobar ambos para poder aprobar esta instancia de evaluación.
+
+\begin{enumerate}
+    \item \textbf{TPI:} Trabajo práctico en el marco procesamiento de imágenes biomédicas
+    \item \textbf{TPS:} Trabajo práctico en el marco de procesamiento de señales biomédicas
+\end{enumerate}
+
+\vspace{0.25cm}
+
+\subsection{CONDICIONES DE ENTREGA}
+
+\begin{itemize}
+    \item La entrega de cada trabajo debe ser vía mail hacia los 4 profesores de la materia antes de las 17:00hs del día de entrega del trabajo (10 de noviembre para TPI y 17 de noviembre para TPS).
+
+    \item La fecha de entrega es la misma para los 13 grupos de alumnos/as, sólo la defensa oral del trabajo quedará desdoblada en dos días.
+    
+    \item En la entrega, es obligatorio adjuntar el informe principal que recopile todo lo desarrollado para cada uno de los trabajos. (Ver Sección ~\ref{ch:informe} para más información).
+    
+    \item La defensa oral del trabajo deberá ser acompañada de una presentación tipo \textit{Power Point}, la cual se debe adjuntar en esta misma entrega.
+    
+    \item De no cumplir con el tiempo límite de entrega, \textbf{la nota máxima del trabajo práctico será 7}. Si no se llegase a entregar el trabajo antes del comienzo de la primer clase de defensa de cada trabajo, el trabajo se considera reprobado y se deberá recuperar en la fecha de recuperatorios del cronograma (28 de noviembre para TPI y TPS).
+    
+    \item En el asunto del mail se deberá colocar la siguiente caracterización: \texttt{[PSIB2025Q1-TPI] Grupo NN - Apellido1 Apellido2} para el TPI; y \texttt{[PSIB2025Q1-TPS] Grupo NN - Apellido1 Apellido2} para el TPS.
+\end{itemize}
+
+\vspace{0.25cm}
+
+\subsection{CARACTERÍSTICAS DE LA DEFENSA}
+\begin{itemize} 
+
+    \item La defensa del trabajo será el 12 y 14 de noviembre (TPI) y el 19 y 26 de noviembre (TPS) durante las horas de la materia (19:00 a 22:00hs). Cada día expondrán y defenderán 6 o 7 grupos sus respectivos trabajos.
+    
+    \item Se deberá exponer oralmente un resumen del trabajo realizado con un documento de apoyo conveniente para explicar todo lo realizado para resolver las consignas planteadas.
+    
+    \item La duración de la defensa deberá ser de 15-20 minutos por grupo (tiempo máximo obligatorio). Luego de ese lapso de tiempo, se contarán con 5 minutos finales para que los evaluadores realicen las preguntas y aclaraciones que se crean necesarias para cerrar la defensa. De excederse del tiempo de presentación, se descontarán puntos correspondientes a la demora. 
+
+    \item Todos los integrantes del grupo deberán poder responder preguntas de la totalidad de ambos trabajos prácticos. En el caso que los estudiantes demuestren no manejar la totalidad de los temás desarrollados en el trabajo práctico la cátedra podrá optar por asignar una nota diferenciada a distintos integrantes del grupo. 
+\end{itemize}
+
+\vspace{0.25cm}
+
+\subsection{CARACTERÍSTICAS DEL INFORME} \label{ch:informe}
+
+Se deberá realizar un informe que recopile todo lo desarrollado para cada trabajo. Este informe (en formato \textit{.pdf}) deberá resumir la explicación del funcionamiento de los códigos desarrollados, los análisis realizados y las conclusiones a las que se llegó.  El informe deberá contar con una extensión máxima de 6 páginas, sin contar anexos agregados (en los cuales se podrán incluir figuras si estas no entran dentro de las 6 páginas establecidas). 
+
+Respecto al código desarrollado, el mismo debe entregarse en uno de los siguientes formatos:
+
+\begin{enumerate}
+    \item El/Los documento/s \textit{Jupyter Notebook (.ipynb)} (como un Colab), que contengan el código junto con acalaraciones en texto explicativo. 
+
+    \item Todos los documentos planos de Python (\textit{.py}) utilizados para el código. En el informe principal se deberá detallar qué información tiene cada documento de Python.
+\end{enumerate}
+
+\vspace{0.25cm}
+
+Por otro lado, el informe deberá contar con los siguientes tópicos:
+
+\begin{enumerate}
+    \item \textbf{Introducción}:
+    \begin{enumerate}
+        \item Marco teórico
+        \item Estado del Arte
+        \item Objetivos (generales y puntuales)
+        \item Y toda otra información que se crea necesaria para introducir la temática elegida
+    \end{enumerate}
+    
+    \item \textbf{Materiales y Métodos}: Donde se aclarará la integración de contenidos impartidos en la asignatura como de metodologías novedosas que se utilicen para la resolución del problema planteado y del cumplimiento de los objetivos. También toda especificación que se crea necesaria para explicar todo el trabajo realizado. En esta sección se debe presentar y detallar la interfaz realizada, como en breves líneas su funcionamiento y manipulación. 
+    \item \textbf{Resultados}: Donde se aclarará cada resultado obtenido por los algoritmos desarrollados para la resolución del problema planteado.
+    \item \textbf{Conclusiones}: Donde se aclarará si se cumplió con el objetivo planteado como posibles mejoras a realizar y la comparación con algoritmos similares al planteado (especificado en Estado del Arte de Introducción). Toda conclusión a la que se llegue con el trabajo, se deberá explicitar en esta sección.
+    
+\end{enumerate}
+
+El título del informe principal deberá seguir la siguiente lógica:
+
+\begin{itemize}
+    \item \texttt{PSIB2024Q2-TPI-GrupoNN-Apellido1\_Apellido2} (para TPI)
+    
+    \item \texttt{PSIB2024Q2-TPS-GrupoNN-Apellido1\_Apellido2} (para TPS)
+\end{itemize}
+
+\textcolor{gray}{Ejemplo: \texttt{PSIB2024Q2-TPS-Grupo00-Reppucci\_Tassara}} \\ 
+
+\vspace{0.25cm}
+
+Para todo otro documento que acompañe la entrega, se deberá colocar el nombre que se crea adecuado y deberá estar detallado en el informe principal (su nombre y contenido). 
+
+\vspace{0.25cm}
+\subsection{EVALUACIÓN DEL INFORME Y LA DEFENSA}
+
+\begin{itemize} 
+    \item \textit{Del informe del trabajo se evaluará:} La prolijidad del mismo, del código realizado, el respeto de las consignas planteadas y también la solidez del análisis realizado en cada paso.
+    
+    \item \textit{De la defensa oral del trabajo se evaluará:} La claridad, el conocimiento mostrado y la utilización de tecnicismos propios de la materia, como así también la participación de cada miembro del grupo y el respeto del tiempo asignado para la defensa oral.
+
+    \item Se dará una breve devolución oral el día de la defensa y otra devolución más detallada, vía mail y junto con la nota final del trabajo, en un plazo de 7 (siete) días luego de la defensa del mismo. Se considerará una prioridad a aquellos grupos que deban presentarse en recuperatorio.
+
+    \item Si se llegase a aprobar cada trabajo, la nota final es una puntuación numérica entre 4 (cuatro) y 10 (diez), que corresponden al 60\% y 100\% del trabajo correctamente realizado respectivamente. De no aprobarse, se asignará el estado de ``Desaprobado” y los docentes evaluadores aclararán la forma para poder recuperar el mismo.
+\end{itemize}
+
+\vspace{0.25cm}
+
+\subsection*{ACLARACIÓN EXTRA}
+
+Para ambos proyectos, se podrá diseñar y elaborar una interfaz gráfica que permita ejecutar los algoritmos propuestos. El desarrollo de esta interfaz \textbf{no es obligatorio}, sino que se considerará como un objetivo opcional a desarrollar para alguno o ambos trabajos. Su desarrollo se considerará en la Nota Final de cada trabajo. En la defensa del trabajo, se podrá hacer una simulación del funcionamiento de dicha interfaz, por lo cual se pide a lxs alumnxs que consideren dicha simulación dentro del tiempo máximo de defensa oral con el que se cuenta.
+
+\newpage
+
+\section{TPI - Procesamiento de Imágenes Biomédicas}
+
+El TPI de la materia consiste en la elaboración de un algoritmo que permita aplicar los conocimientos adquiridos a una problemática biomédica concreta. La propuesta deberá enmarcarse en una situación clínica o biológica de interés, y resolverse a través del procesamiento y análisis de imágenes. El objetivo central es que las/os estudiantes desarrollen una mirada crítica sobre el uso de herramientas computacionales en biomedicina,
+combinando fundamentos teóricos, metodológicos y prácticos. Se espera no solo la implementación técnica, sino también la interpretación clara y argumentada de los resultados obtenidos, señalando aciertos, limitaciones y proyecciones futuras.
+Las/os estudiantes tendrán la posibilidad de idear un tema en torno al eje que crean conveniente, siempre y cuando respeten la dinámica de elaboración y el cronograma del TPI.
+
+\subsection*{Base de datos}
+Las imágenes con las que las/os estudiantes deberán trabajar pueden estar puestas a disposición en bancos de imágenes que la cátedra ejemplificará como de bancos de imágenes aportados por los propios estudiantes en base a los temas elegidos: 
+
+\begin{itemize}
+    \item \href{https://physionet.org/about/database/}{Physionet}
+    \item \href{https://www.kaggle.com/datasets/?search=image+medical}{Medical Images in Kaggle}
+    \item \href{https://osf.io/}{OSF}
+    \item \href{https://openneuro.org/}{OpenNeuro}
+    \item \href{https://bbbc.broadinstitute.org/}{BBBC (Broad Bioimage Benchmark Collection)}
+    \item \href{https://library.ucsd.edu/dc/search?f%5Bcollection_sim%5D%5B%5D=Cell+Image+Library&id=bb42043698&sort=title_ssi+asc}{Cell Image Library}
+    \item \href{https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community}{NIH Chest X-ray Dataset}
+    \item \href{https://medpix.nlm.nih.gov/home}{MedPix}
+    \item \href{https://sites.wustl.edu/oasisbrains/}{OASIS (Open Access Series of Imaging Studies)}
+    \item \href{https://www.cancerimagingarchive.net/access-data/?utm_source=chatgpt.com}{TCIA (The Cancer Imaging Archive)}
+    \item \href{https://www.ukbiobank.ac.uk/about-our-data/types-of-data/imaging-data}{UK-BIOBANK}
+    \item \href{https://collectiveminds.health/articles/medical-imaging-datasets-complete-guide-to-healthcare-data-resources}{MIDRC}
+    \item \href{https://aimi.stanford.edu/shared-datasets}{Stanford AIMI Collections}
+    \item \href{https://ngdc.cncb.ac.cn/obia/home}{OBIA}
+\end{itemize}
+
+Alternativamente, los estudiantes pueden buscar un artículo científico que cite a un dataset que sea de libre acceso.
+
+Recomendamos también leer \href{https://hslguides.med.nyu.edu/medicalimages}{el siguiente blog de la NYU} donde se ejemplifican otras fuentes para encontrar datasets de imágenes biomédicas.
+
+\vspace{0.25cm}
+
+\subsection*{ACLARACIÓN}
+
+Se considerará obligatorio incluir cada uno de los pasos vistos en la materia, ya sea con técnicas vistas en clase como con técnicas novedosas propuestas por los/as alumnos/as. Estas temáticas son:
+\begin{itemize}
+    \item \textit{Contextualización:} características de las imágenes y dataset utilizados
+    \item \textit{Pre-procesamiento:} Mejoramiento de imágenes; Reconstrucción; Compresión y descompresión
+    \item \textit{Procesamiento y Extracción de características:} Segmentación de imágenes; Análisis de texturas
+    \item \textit{Resultados/diagnóstico:} Visualización de imágenes, análisis estadísticos, comparaciones, significancia de los resultados. Visualización mediante interfaces gráficas (opcional)
+\end{itemize}
+
+\subsection*{Milestones}
+
+\begin{itemize}
+    \item Tarea 1: Investigación sobre el eje elegido, elaboración de un problema y desarrollo de una propuesta de trabajo a tal fin.
+    \item Tarea 2: Diseño del algoritmo.
+    \item Tarea 3: Generación, implementación del código propuesto y diseño de la interfaz gráfica.
+    \item Tarea 4: Entrega del modelo a la cátedra, junto con informe escrito. La cátedra lo evaluará con casos incógnita.
+    \item Tarea 5: Defensa de trabajo
+
+\end{itemize}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+\textbf{FECHA} & \textbf{TAREA} \\ \hline
+26/08/2025 & Conformación de los grupos de TP cuatrimestral. \\ \hline
+01/10/2025 & Elección del Tema y Base de Datos. Anteproyecto. \\ \hline
+20/10/2025 & Avances. Pre-procesamiento y extracción de características. \\ \hline
+10/11/2025 & Entrega de Informes. \\ \hline
+12-14/11/2025 & Presentación Oral y Defensa del TPI. \\ \hline
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\section{TPS - Procesamiento de Señales Biomédicas}
+
+El TPS de la materia consiste en la elaboración de un algoritmo que permita aplicar los conocimientos adquiridos en el curso en base a una investigación grupal que desarrollarán las/os estudiantes en torno a resolver alguna problemática designada a través del procesamiento de señales, enmarcada en una situación clínica puntual.
+\\
+Cada grupo tendrá la opción de elegir una de las opciones de  bases de datos provistas a continuación o de elegir libremente una base de datos que les sea de interés. De proponer una base de datos invesigada por su cuenta, derberán enviar un mail a los docentes de la materia para que la misma sea aprobada. Se sugieren \href{https://physionet.org/about/database/}{Physionet} y \href{https://openneuro.org/}{OpenNeuro} como páginas para buscar datasets pero los animamos a que busquen también otras páginas por su cuenta. \textbf{Cada grupo deberá trabajar con una base de datos distinta}, incluso al seleccionar una de las bases de datos sugeridas por la cátedra. Estas señales fueron registradas en el contexto de algún estudio científico, por ende también se otorgará un artículo científico que detalle el procedimiento realizado sobre dicha base de datos o guía para el procesamiento a realizar sobre la base de datos. Igualmente el grupo podrá plantear un objetivo distinto al detallado en el artículo adjunto. 
+
+\subsection*{Base de datos sugeridas}
+
+\subsubsection*{OPCIÓN 1}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/adfecgdb/1.0.0/}{Abdominal and Direct Fetal ECG Database}
+
+\textbf{Article}: \href{https://pubmed.ncbi.nlm.nih.gov/25854665/}{Determination of fetal heart rate from abdominal signals: evaluation of beat-to-beat accuracy in relation to the direct fetal electrocardiogram} - DOI: 10.1515/bmt-2011-0130
+
+\subsubsection*{OPCIÓN 2}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/hmc-sleep-staging/1.1/}{Haaglanden Medisch Centrum sleep staging database}
+
+\textbf{Article}: \href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256111}{Inter-database validation of a deep learning approach for automatic sleep scoring} - DOI: 10.1371/journal.pone.0256111
+
+\subsubsection*{OPCIÓN 3}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/eegmat/1.0.0/}{EEG During Mental Arithmetic Tasks}
+
+\textbf{Article}: \href{https://www.mdpi.com/2306-5729/4/1/146}{Electroencephalograms during Mental Arithmetic Task Performance} - DOI: 10.3390/data4010014
+
+\subsubsection*{OPCIÓN 4}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/auditory-eeg/1.0.0/}{Auditory evoked potential EEG-Biometric dataset}
+
+\textbf{Article}: \href{https://ieeexplore.ieee.org/abstract/document/4426716}{A minimal channel set for individual identification with EEG biometric using genetic algorithm} - DOI: 10.1109/ICCIMA.2007.82
+
+\subsubsection*{OPCIÓN 5}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/challenge-2013/1.0.0/}{Noninvasive Fetal ECG: The PhysioNet/Computing in Cardiology Challenge 2013}
+
+\textbf{Article}: \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4230703/}{Noninvasive Fetal ECG: the PhysioNet/Computing in Cardiology Challenge 2013}
+
+\subsubsection*{OPCION 6}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/sleep-edfx/1.0.0/}{Sleep-EDF Database}
+
+\textbf{Article}: \href{https://ieeexplore.ieee.org/document/867928}{Analysis of a sleep-dependent neuronal feedback loop: the slow-wave microcontinuity of the EEG} - DOI: 10.1109/10.867928
+
+\subsubsection*{OPCION 7}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/brain-wearable-monitoring/1.0.0/}{Regulation of Brain Cognitive States through Auditory, Gustatory, and Olfactory Stimulation with Wearable Monitoring}
+
+\textbf{Article}: \href{https://www.nature.com/articles/s41598-023-37829-z#Sec3}{Regulation of brain cognitive states through auditory, gustatory, and olfactory stimulation with wearable monitoring} - DOI: DOI: 10.1038/s41598-023-37829-z
+
+\subsubsection*{OPCION 8}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/slpdb/1.0.0/}{MIT-BIH Polysomnographic Database}
+
+\textbf{Article}: \href{https://pubmed.ncbi.nlm.nih.gov/10459681/}{Development of the polysomnographic database on CD-ROM} - DOI: 10.1046/j.1440-1819.1999.00527.x
+
+\subsubsection*{OPCION 9}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/ecg-spider-clip/1.0.0/}{Electrocardiogram, skin conductance and respiration from spider-fearful individuals watching spider video clips}
+
+\textbf{Article}: \href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0231517}{On-line anxiety level detection from biosignals: machine learning based on a randomized controlled trial with spider-fearful individuals} - DOI: 10.1371/journal.pone.0231517
+
+\subsubsection*{OPCION 10}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/shdb-af/1.0.1/}{SHDB-AF: a Japanese Holter ECG database of atrial fibrillation
+}
+
+\textbf{Article}: \href{https://www.nature.com/articles/s41597-025-04777-4}{SHDB-AF: a Japanese Holter ECG database of atrial fibrillation (version 1.0.1)} - DOI: https://doi.org/10.13026/n6yq-fq90
+
+\subsubsection*{OPCION 11}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/apnea-ecg/1.0.0/}{Apnea-ECG Database}
+
+\textbf{Article}: \href{https://www.researchgate.net/publication/3884869_The_apnea-ECG_database}{The apnea-ECG database} - DOI: DOI:10.1109/CIC.2000.898505
+
+\subsubsection*{OPCION 12}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/ptb-xl/1.0.3/}{PTB-XL, a large publicly available electrocardiography dataset
+}
+
+\textbf{Article}: \href{https://iopscience.iop.org/article/10.1088/0967-3334/35/8/1521/meta}{PTB-XL, a large publicly available electrocardiography dataset} 
+
+- DOI: 10.6084/m9.figshare.12098055
+
+\subsubsection*{OPCION 13}
+
+\textbf{Base de datos}: \href{https://openneuro.org/datasets/ds005555/versions/1.1.1}{ Bitbrain Open Access Sleep Dataset}
+
+\subsubsection*{OPCION 14}
+
+\textbf{Base de datos}: \href{https://openneuro.org/datasets/ds004902/versions/1.0.8}{ A Resting-state EEG Dataset for Sleep Deprivation}
+
+\textbf{Article}: \href{https://www.nature.com/articles/s41597-024-03268-2}{A resting-state EEG dataset for sleep deprivation} - DOI: 10.1038/s41597-024-03268-2
+
+\subsubsection*{OPCION 15}
+
+\textbf{Base de datos}: \href{https://physionet.org/content/ucddb/1.0.0/}{St. Vincent's University Hospital / University College Dublin Sleep Apnea Database}
+
+
+\subsection*{Milestones}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+\textbf{FECHA} & \textbf{TAREA} \\ \hline
+26/08/2025 & Conformación de los grupos de TP cuatrimestral. \\ \hline
+01/10/2025 & Elección del Tema y Base de Datos. Anteproyecto. \\ \hline
+27/10/2025 & Avances. Pre-procesamiento y extracción de características. \\ \hline
+17/11/2025 & Entrega de Informes. \\ \hline
+19-26/11/2025 & Presentación Oral y Defensa del TPS. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{ACLARACIÓN}
+
+Se considerará obligatorio incluir y aplicar los temas vistos en la materia en la elaboración del trabajo. Se podrán adicionar técnicas novedosas propuestas por los/as alumnos/as. 
+
+\begin{itemize}
+    \item \textit{Contextualización:} Método de adquisición de las señales
+    \item \textit{Pre-procesamiento:} Filtros convencionales (diseño de filtros); Filtros óptimos; Segmentación de señales; Recorte en realizaciones; Detección de complejo QRS
+    \item \textit{Procesamiento y Extracción de características:} Segmentación de señales; Análisis de ritmos cerebrales; Detección de complejo QRS; Análisis de HRV; Periodograma de Lomb
+    \item \textit{Resultados/diagnóstico:} Visualización de señales mediante interfaces gráficas (opcional)
+\end{itemize}
+
+
+\end{document}
+
